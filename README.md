@@ -20,7 +20,7 @@ Sender Side (Embedding Process):
 
 2. Image Selection – Use the first 4 bits of each block to determine which image is generated via Stable Diffusion’s feature map.
 - First Unencrypted Image
-![GenSteg](/content/ChickenBuildings1.png)
+![FirstUnencrypted](/content/ChickenBuildings1.png)
 
 3. Round Key Generation –
 
@@ -29,19 +29,20 @@ Sender Side (Embedding Process):
 - Apply XOR to generate a new round key (Kn).
 
 4. Encryption – Encrypt the message block using the round key.
+
 Encoded (String format): gAAAAABnN1vDWG0PcL45LmEMNnfXwJfH339pMpDqp8jzehfmzuJJfiOU55yid9pHRrCkag_OKOuYplm8VLY34iRI9PtFfTkuXU2iFTEAxGLP9Hd6ZgB4H7M=
 Decoded: This is a secret message
 
 5. Steganography Embedding – Embed the encrypted block into the generated image.
 First Image encrypted with Key
-![GenSteg](/content/my_new_image.png)
+![FirstEncrypted](/content/my_new_image.png)
 
 6. Transmission – Send the stego-image as the carrier.
 
 Receiver Side (Extraction Process):
 
 1. Image Classification – Perform classification on the received stego-image to retrieve 4 bits from the feature map.
-![GenSteg](/content/ImageClass.png)
+![ImageClassification](/content/ImageClass.png)
 
 2. Round Key Reconstruction – Rebuild the round key using the same feature map-based F-box function as sender.
 
@@ -51,8 +52,8 @@ Receiver Side (Extraction Process):
 
 5. Message Reconstruction – Append all decrypted blocks sequentially to recover the original secret message.
 
-!\[F-Box](content/F-Box.jpg)
-!\[GenSteg](content/GenSteg.jpg)
+![F-Box](/content/F-Box.jpg)
+![GenSteg](/content/GenSteg.jpg)
 
 
 ## Results and Evaluation
@@ -69,10 +70,10 @@ Future improvements will focus on enhancing the feature-map embedding technique 
 
 ## Some Extra Images
 Second Unencrpyted Image
-!\[GenSteg](content/ChickenSea19.png)
+![SecondUnencrypted](/content/ChickenSea19.png)
 
 Second Image Encrypted with Message using previously communicated Key
-!\[GenSteg](content/my\_new\_image2.png)
+![SecondEncrypted](/content/my_new_image2.png)
 
 
 Implemented with PyTorch, OpenCV, Python, and cryptography libraries for end-to-end encryption, embedding, and extraction.

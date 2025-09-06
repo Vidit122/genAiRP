@@ -1,5 +1,5 @@
 # genAiRP
-## Landing Page
+## Project Overview
 
 Generative Image Steganography is a novel system designed to merge the capabilities of generative AI with cryptographic steganography for secure information exchange. Traditional steganography hides data inside existing media, but this approach introduces new vulnerabilities such as detection through compression or forensic analysis. To address this, our method leverages image generation itself as the medium for embedding, ensuring the hidden information remains indistinguishable from naturally generated samples.
 
